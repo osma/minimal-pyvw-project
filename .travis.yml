@@ -7,6 +7,8 @@ python:
 cache: pip
 install:
 - sudo apt-get install libboost-program-options-dev libboost-python-dev zlib1g-dev
+- sudo rm /usr/lib/x86_64-linux-gnu/libboost_python.so
+- sudo ln -s /usr/lib/x86_64-linux-gnu/libboost_python-py35.so /usr/lib/x86_64-linux-gnu/libboost_python.so
 - pip install vowpalwabbit
 script:
 - python test-vw.py
