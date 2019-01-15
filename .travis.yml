@@ -2,13 +2,11 @@ dist: xenial
 language: python
 python:
 - '3.5'
-- '3.6'
-- '3.7'
-cache: pip
 install:
 - sudo apt-get install libboost-program-options-dev libboost-python-dev zlib1g-dev
 - sudo ln -sf /usr/lib/x86_64-linux-gnu/libboost_python-py35.a /usr/lib/x86_64-linux-gnu/libboost_python.a
 - sudo ln -sf /usr/lib/x86_64-linux-gnu/libboost_python-py35.so /usr/lib/x86_64-linux-gnu/libboost_python.so
+- ls -l /usr/lib/x86_64-linux-gnu/
 - pip install vowpalwabbit
 script:
 - python test-vw.py
